@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToupTek Photonics 技術解説：顕微鏡用イメージングの普及と最適化</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --main-color: #091a2d;
+            --accent-color: #f97316;
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --section-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--main-color);
+            padding: 15px 5%;
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            height: 40px;
+            cursor: pointer;
+        }
+
+        /* Hero Area */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .hero-logo {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            letter-spacing: 0.05em;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            background: var(--section-bg);
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        h2 {
+            color: var(--main-color);
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: var(--main-color);
+            margin: 25px 0 15px 0;
+            font-size: 1.2rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 6px;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: var(--main-color);
+            font-weight: bold;
+        }
+
+        /* Simple Zoom */
+        img {
+            cursor: zoom-in;
+            transition: all 0.3s ease;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .zoomed {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1.5);
+            z-index: 2000;
+            cursor: zoom-out;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        }
+
+        /* Footer from instructions */
+        footer {
+            background: #091a2d;
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.6rem; }
+            section { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="https://nakajimakan14550.github.io/home/">
+        <img src="https://nakajimakan14550.github.io/home/logo.png" alt="logo" class="logo">
+    </a>
+</nav>
+
+<div class="hero">
+    <img src="https://nakajimakan14550.github.io/home/logo.png" alt="logo" class="hero-logo">
+    <h1>ToupTek Photonics：顕微鏡用イメージング技術の普及と最適化</h1>
+    <p>高いコストパフォーマンスと物理的汎用性を両立し、教育・医療・産業検査におけるデジタルイメージングを加速する。</p>
+</div>
+
+<div class="container">
+    <section>
+        <h2>【背景・課題】顕微鏡デジタル化における物理的・経済的障壁</h2>
+        <p>
+            ライフサイエンスおよび産業検査の現場において、光学顕微鏡のデジタル化は研究効率とデータ再現性の向上に直結する。しかし、従来の科学研究用イメージング（sCMOS等）は、極限の低ノイズ性能を追求するあまり、高価格かつ専用設計に依存する傾向があった。
+        </p>
+        <p>
+            特に教育現場や一般的な医療検査、外観検査においては、ハイエンドな物理スペックよりも、既存設備への適応性、調達の迅速性、および投資対効果（ROI）が導入における主要なボトルネックとなっている。
+        </p>
+    </section>
+
+    <section>
+        <h2>【解決策】ToupTekの技術原理と市場戦略</h2>
+        <p>
+            Hangzhou ToupTek Photonics（2010年設立）は、Cマウント接続を基軸とした「外付け型デジタルイメージングソリューション」に特化することで、これらの課題を解決している。
+        </p>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>高度な物理的汎用性</h3>
+                <p>既存の光学顕微鏡に「とりつけてプラス」するCマウント基準を徹底。光学系全体の置換を不要とし、低コストでのデジタルアップグレードを可能にする。</p>
+            </div>
+            <div class="card">
+                <h3>CMOSセンサの最適化設計</h3>
+                <p>sCMOSおよびCMOSセンサを搭載しつつ、回路設計を簡素化。量産効果により、物理性能を維持しながら「短納期・低価格」な供給体制を実現した。</p>
+            </div>
+        </div>
+
+        <h3>メーカー・ポジショニングの論理的比較</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>メーカー</th>
+                    <th>物理的特性（例え）</th>
+                    <th>産業的適応領域</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tucsen</td>
+                    <td>科学研究用特装車両</td>
+                    <td>EUV、宇宙、極低ノイズを要する国家プロジェクト</td>
+                </tr>
+                <tr>
+                    <td>Luxima</td>
+                    <td>超高速解析機（F1）</td>
+                    <td>チップマウンタ、高速動作解析、ゴルフ解析</td>
+                </tr>
+                <tr>
+                    <td><strong>ToupTek</strong></td>
+                    <td><strong>高効率量産車</strong></td>
+                    <td><strong>顕微鏡デジタル化、医療、教育、一般外観検査</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>【産業的インパクト】イメージング技術のコモディティ化</h2>
+        <p>
+            ToupTekの台頭は、単なる安価な代替品の提供に留まらず、産業用カメラ市場全体の構造変化を象徴している。Hikrobot（ハイクロボット）等の巨大プレイヤーによる産業用カメラ市場への攻勢と呼応し、高品質なイメージングデータの取得コストを劇的に低下させている。
+        </p>
+        <p>
+            特に、PC不要でモニターへ直接出力可能なHDMI接続型カメラの拡充は、作業現場の物理的な省スペース化と、検査スループットの向上に直接的に寄与している。
+        </p>
+    </section>
+</div>
+
+<footer style="background: #091a2d; color: #fff; padding: 60px 20px; text-align: center;">
+    <div class="footer-info">
+        <p class="company-name" style="font-size: 1.5rem; font-weight: bold; margin-bottom: 20px;">クロニクス株式会社</p>
+        <address class="footer-address" style="font-style: normal; line-height: 1.8; color: #cbd5e1;">
+            <p>〒160-0023 東京都新宿区西新宿3-2-11 新宿三井ビルディング二号館 904室</p>
+            <div class="contact-grid" style="display: flex; justify-content: center; gap: 20px; margin: 20px 0;">
+                <p><strong>TEL</strong> 03-5322-7191 &nbsp;&nbsp; <strong>FAX</strong> 03-5322-7790</p>
+            </div>
+        </address>
+        <a href="mailto:sales@chronix.co.jp" class="btn-contact" style="display: inline-block; background: #f97316; color: white; padding: 12px 30px; border-radius: 5px; text-decoration: none; margin-top: 20px;">
+            <i class="fas fa-envelope" style="margin-right: 10px;"></i>メールでお問い合わせ
+        </a>
+        <p style="margin-top: 50px; font-size: 0.8rem; color: #64748b; letter-spacing: 0.05em;">
+            © 2026 CHRONIX
+        </p>
+    </div>
+</footer>
+
+<script>
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('click', (e) => {
+            if (img.classList.contains('zoomed')) {
+                img.classList.remove('zoomed');
+            } else {
+                document.querySelectorAll('.zoomed').forEach(el => el.classList.remove('zoomed'));
+                img.classList.add('zoomed');
+            }
+            e.stopPropagation();
+        });
+    });
+    document.body.addEventListener('click', () => {
+        document.querySelectorAll('.zoomed').forEach(el => el.classList.remove('zoomed'));
+    });
+</script>
+
+</body>
+</html>
