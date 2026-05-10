@@ -103,6 +103,45 @@
             text-align: justify;
         }
 
+        /* Image Display & Zoom */
+        .image-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .zoomable-img {
+            cursor: zoom-in;
+            transition: all 0.3s ease;
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .zoomed {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1.4);
+            z-index: 2000;
+            cursor: zoom-out;
+            box-shadow: 0 0 100px rgba(0,0,0,0.5);
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1500;
+        }
+
         /* Grid Layout */
         .grid {
             display: grid;
@@ -136,25 +175,7 @@
             font-weight: bold;
         }
 
-        /* Simple Zoom */
-        img {
-            cursor: zoom-in;
-            transition: all 0.3s ease;
-            max-width: 100%;
-            height: auto;
-        }
-
-        .zoomed {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(1.5);
-            z-index: 2000;
-            cursor: zoom-out;
-            box-shadow: 0 0 50px rgba(0,0,0,0.5);
-        }
-
-        /* Footer from instructions */
+        /* Footer */
         footer {
             background: #091a2d;
             color: #fff;
@@ -165,6 +186,7 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.6rem; }
             section { padding: 20px; }
+            .zoomed { transform: translate(-50%, -50%) scale(1.0); width: 95vw; }
         }
     </style>
 </head>
@@ -182,12 +204,20 @@
     <p>高いコストパフォーマンスと物理的汎用性を両立し、教育・医療・産業検査におけるデジタルイメージングを加速する。</p>
 </div>
 
+<div class="overlay" id="overlay"></div>
+
 <div class="container">
     <section>
         <h2>【背景・課題】顕微鏡デジタル化における物理的・経済的障壁</h2>
         <p>
             ライフサイエンスおよび産業検査の現場において、光学顕微鏡のデジタル化は研究効率とデータ再現性の向上に直結する。しかし、従来の科学研究用イメージング（sCMOS等）は、極限の低ノイズ性能を追求するあまり、高価格かつ専用設計に依存する傾向があった。
         </p>
+        
+        <div class="image-container">
+            <img src="toup.png" alt="ToupTek 製品カテゴリーと市場戦略" class="zoomable-img" id="productImage">
+            <p style="font-size: 0.85rem; color: #64748b; margin-top: 10px;">図1：主な製品カテゴリーと市場戦略の概要</p>
+        </div>
+
         <p>
             特に教育現場や一般的な医療検査、外観検査においては、ハイエンドな物理スペックよりも、既存設備への適応性、調達の迅速性、および投資対効果（ROI）が導入における主要なボトルネックとなっている。
         </p>
@@ -269,19 +299,22 @@
 </footer>
 
 <script>
-    document.querySelectorAll('img').forEach(img => {
-        img.addEventListener('click', (e) => {
-            if (img.classList.contains('zoomed')) {
-                img.classList.remove('zoomed');
-            } else {
-                document.querySelectorAll('.zoomed').forEach(el => el.classList.remove('zoomed'));
-                img.classList.add('zoomed');
-            }
-            e.stopPropagation();
-        });
+    const overlay = document.getElementById('overlay');
+    const image = document.getElementById('productImage');
+
+    image.addEventListener('click', (e) => {
+        image.classList.toggle('zoomed');
+        if (image.classList.contains('zoomed')) {
+            overlay.style.display = 'block';
+        } else {
+            overlay.style.display = 'none';
+        }
+        e.stopPropagation();
     });
-    document.body.addEventListener('click', () => {
-        document.querySelectorAll('.zoomed').forEach(el => el.classList.remove('zoomed'));
+
+    overlay.addEventListener('click', () => {
+        image.classList.remove('zoomed');
+        overlay.style.display = 'none';
     });
 </script>
 
