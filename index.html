@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>技術解説：次世代オールインワン顕微鏡システムによるイメージングの最適化</title>
+    <title>技術解説：次世代イメージングソリューションと市場戦略の論理</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -70,16 +70,9 @@
             margin: 0;
         }
 
-        .hero p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            max-width: 800px;
-            margin: 20px auto 0;
-        }
-
         /* Layout */
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 40px 20px;
         }
@@ -115,6 +108,9 @@
         .image-container {
             margin: 30px 0;
             text-align: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
         }
 
         .zoomable-img {
@@ -130,12 +126,12 @@
             position: fixed;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%) scale(1.4);
+            transform: translate(-50%, -50%) scale(1.1);
             z-index: 2000;
             cursor: zoom-out;
             box-shadow: 0 0 100px rgba(0,0,0,0.5);
-            max-width: 90vw;
-            max-height: 90vh;
+            max-width: 95vw;
+            max-height: 95vh;
             object-fit: contain;
         }
 
@@ -153,7 +149,7 @@
         /* Grid Layout */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             margin-top: 20px;
         }
@@ -162,25 +158,6 @@
             background: #f1f5f9;
             padding: 20px;
             border-radius: 6px;
-        }
-
-        /* Table Styling */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-
-        th, td {
-            text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        th {
-            background-color: #f1f5f9;
-            color: var(--main-color);
-            font-weight: bold;
         }
 
         /* Footer */
@@ -193,8 +170,8 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.6rem; }
+            .image-container { grid-template-columns: 1fr; }
             section { padding: 20px; }
-            .zoomed { transform: translate(-50%, -50%) scale(1.0); width: 95vw; }
         }
     </style>
 </head>
@@ -209,90 +186,62 @@
 <div class="hero">
     <div class="hero-header">
         <img src="https://nakajimakan14550.github.io/home/logo.png" alt="logo" class="hero-logo">
-        <h1>次世代イメージング：4Kオールインワン顕微鏡システムの技術論理</h1>
+        <h1>技術仕様と市場戦略の統合：次世代イメージングソリューション</h1>
     </div>
-    <p>Sony製Starvis 2センサーと高精細モニターを統合。PCレス環境による「物理的空間の最適化」と「観察精度の向上」を両立する。</p>
 </div>
 
 <div class="overlay" id="overlay"></div>
 
 <div class="container">
     <section>
-        <h2>【背景・課題】顕微鏡デジタル化における物理的・空間的限界</h2>
+        <h2>【背景・課題】イメージング技術における導入障壁</h2>
         <p>
-            ライフサイエンスおよび産業検査の現場における顕微鏡のデジタル化は、研究効率に直結する。しかし、従来のシステムでは「カメラ・PC・モニター」をそれぞれ独立して設置・配線する必要があり、以下の物理的課題が顕在化していた。
+            科学研究および産業検査において、高解像度イメージングの重要性は高まっている。しかし、従来のハイエンド機材は「高コスト」「複雑なPC連携」「長納期」という物理的・経済的制約を有しており、教育現場や大量導入が必要な医療・製造現場において、技術普及のボトルネックとなっていた。
         </p>
+    </section>
+
+    <section>
+        <h2>【解決策】製品ポートフォリオと技術原理</h2>
+        <div class="image-container">
+            <div class="img-box">
+                <img src="toup.png" alt="製品仕様概要" class="zoomable-img">
+                <p style="font-size: 0.85rem; color: #64748b; margin-top: 10px;">図1：AIOCAM4Kシリーズの技術構成</p>
+            </div>
+            <div class="img-box">
+                <img src="image_b1ff76.png" alt="製品カテゴリーと戦略" class="zoomable-img">
+                <p style="font-size: 0.85rem; color: #64748b; margin-top: 10px;">図2：主な製品カテゴリーと市場戦略</p>
+            </div>
+        </div>
+
+        <h3>1. 物理設計の革新：PCレス・オールインワン</h3>
+        <p>
+            4KモニターとStarvis 2センサーを統合。Cマウント接続により、既存の顕微鏡をデジタル化する「とりつけてプラス」のアプローチを採用し、インフラコストを最小化する。
+        </p>
+
+        <h3>2. 多様な技術カテゴリー</h3>
         <div class="grid">
             <div class="card">
-                <h3>設置スペースと配線の複雑化</h3>
-                <p>クリーンルームや製造ラインの限られたスペースにおいて、PCの設置と煩雑な配線はメンテナンス性を低下させ、汚染リスクを増大させる。</p>
+                <h3>顕微鏡用CMOS/HDMI</h3>
+                <p>PCを介さずモニターに直接出力。リアルタイム性を重視した設計で、観察のスループットを向上させる。</p>
             </div>
             <div class="card">
-                <h3>処理遅延と利便性のトレードオフ</h3>
-                <p>高解像度（4K）撮影におけるデータ転送負荷は、リアルタイム観察の滑らかさを損ない、検査スループットのボトルネックとなる。</p>
+                <h3>科学用sCMOS</h3>
+                <p>Tucsen（タクセン）等のハイエンド機と同等の低ノイズ性能を追求。微弱光観察における定量性を確保する。</p>
+            </div>
+            <div class="card">
+                <h3>天体写真用冷却カメラ</h3>
+                <p>ペルチェ冷却機構を搭載し、長時間の露光における熱ノイズを物理的に抑制する。</p>
             </div>
         </div>
-        <p>
-            特に教育現場や外観検査では、ハイエンドな研究用機材よりも、既存設備への適応性と即時性が強く求められている。
-        </p>
     </section>
 
     <section>
-        <h2>【解決策】AIOCAM4Kが提示する「統合」の技術原理</h2>
+        <h2>【産業的インパクト】決定的な競争力としての市場戦略</h2>
         <p>
-            AIOCAM4Kシリーズは、撮像素子、13.3インチ高精細ディスプレイ、および処理エンジンを単一筐体に統合した。これにより、PCを介在させない自律的な観察環境を構築する。
-        </p>
-        
-        <div class="image-container">
-            <img src="toup2.png" alt="AIOCAM4K システム構成" class="zoomable-img" id="productImage1">
-            <p style="font-size: 0.85rem; color: #64748b; margin-top: 10px;">図1：モニター一体型設計による配線の排除と空間効率の最適化</p>
-        </div>
-
-        <h3>1. 物理センサの最適化：Sony Starvis 2の採用</h3>
-        <p>
-            裏面照射型高感度センサー「Starvis 2」を搭載。光の利用効率を最大化する物理構造により、低照度環境下でも4K解像度の高S/N比（信号対雑音比）を維持し、4K/60fpsの低遅延出力を実現している。
-        </p>
-
-        <h3>2. リアルタイム処理アルゴリズム</h3>
-        <p>
-            PCソフトウェアに頼らず、カメラ内部で「精密な寸法計測」や「リアルタイム被写界深度合成（EDF）」を実行。マウス操作一つで、凹凸のある試料の全焦点画像を瞬時に生成する。
-        </p>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>機能カテゴリー</th>
-                    <th>具体的な技術仕様</th>
-                    <th>現場への適用メリット</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>インターフェース</td>
-                    <td>HDMI / USB 3.0 / Wi-Fi</td>
-                    <td>場所を選ばないマルチデバイス共有の実現</td>
-                </tr>
-                <tr>
-                    <td>データ整合性</td>
-                    <td>本体内SD保存・計測機能</td>
-                    <td>PCレスでのエビデンス取得、OS依存の排除</td>
-                </tr>
-                <tr>
-                    <td>操作性</td>
-                    <td>音声制御モジュール</td>
-                    <td>ハンズフリー操作による作業効率と衛生管理の両立</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <section>
-        <h2>【産業的インパクト】イメージング技術のコモディティ化と効率化</h2>
-        <p>
-            ToupTekの技術戦略は、Cマウント規格への徹底した適応（汎用性）と、統合型ハードウェアによる導入コストの低減に基づいている。これは単なる安価な代替品の提供ではなく、産業用イメージングデータの取得コストを劇的に低下させる構造変化を意味する。
+            「安さ」と「納期の早さ」を軸とした供給網の最適化は、単なる価格競争ではなく、イメージング技術のコモディティ化を促進する戦略である。予算制約の厳しい研究室や、教育・医療現場への迅速な大量導入を可能にすることで、科学的知見の蓄積と品質管理の精度向上に寄与する。
         </p>
         <p>
-            PC不要のスタンドアロン運用は、検査工程の自動化や教育現場での共有を加速し、物理現象を「正しく、速く、低コストで」記録・分析するインフラを全ての現場に普及させるインパクトを持つ。
+            ライフサイエンス分野を主軸としつつ、産業用カメラ市場へも進出。物理的な観察精度（高S/N比、低遅延）を、経済的合理性と共に提供することが、社会実装における決定的な競争力となる。
         </p>
     </section>
 </div>
@@ -303,7 +252,8 @@
         <address class="footer-address" style="font-style: normal; line-height: 1.8; color: #cbd5e1;">
             <p>〒160-0023 東京都新宿区西新宿3-2-11 新宿三井ビルディング二号館 904室</p>
             <div class="contact-grid" style="display: flex; justify-content: center; gap: 20px; margin: 20px 0;">
-                <p><strong>TEL</strong> 03-5322-7191 &nbsp;&nbsp; <strong>FAX</strong> 03-5322-7790</p>
+                <p><strong>TEL</strong> 03-5322-7191</p>
+                <p><strong>FAX</strong> 03-5322-7790</p>
             </div>
         </address>
         <a href="mailto:sales@chronix.co.jp" class="btn-contact" style="display: inline-block; background: #f97316; color: white; padding: 12px 30px; border-radius: 5px; text-decoration: none; margin-top: 20px;">
