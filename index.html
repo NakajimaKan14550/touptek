@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToupTek Photonics 技術解説：顕微鏡用イメージングの普及と最適化</title>
+    <title>技術解説：次世代オールインワン顕微鏡システムによるイメージングの最適化</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -51,22 +51,30 @@
             text-align: center;
         }
 
+        .hero-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
         .hero-logo {
             height: 60px;
-            margin-bottom: 20px;
         }
 
         .hero h1 {
             font-size: 2.2rem;
-            margin-bottom: 15px;
             letter-spacing: 0.05em;
+            margin: 0;
         }
 
         .hero p {
             font-size: 1.1rem;
             opacity: 0.9;
             max-width: 800px;
-            margin: 0 auto;
+            margin: 20px auto 0;
         }
 
         /* Layout */
@@ -199,83 +207,92 @@
 </nav>
 
 <div class="hero">
-    <img src="https://nakajimakan14550.github.io/home/logo.png" alt="logo" class="hero-logo">
-    <h1>ToupTek Photonics：顕微鏡用イメージング技術の普及と最適化</h1>
-    <p>高いコストパフォーマンスと物理的汎用性を両立し、教育・医療・産業検査におけるデジタルイメージングを加速する。</p>
+    <div class="hero-header">
+        <img src="https://nakajimakan14550.github.io/home/logo.png" alt="logo" class="hero-logo">
+        <h1>次世代イメージング：4Kオールインワン顕微鏡システムの技術論理</h1>
+    </div>
+    <p>Sony製Starvis 2センサーと高精細モニターを統合。PCレス環境による「物理的空間の最適化」と「観察精度の向上」を両立する。</p>
 </div>
 
 <div class="overlay" id="overlay"></div>
 
 <div class="container">
     <section>
-        <h2>【背景・課題】顕微鏡デジタル化における物理的・経済的障壁</h2>
+        <h2>【背景・課題】顕微鏡デジタル化における物理的・空間的限界</h2>
         <p>
-            ライフサイエンスおよび産業検査の現場において、光学顕微鏡のデジタル化は研究効率とデータ再現性の向上に直結する。しかし、従来の科学研究用イメージング（sCMOS等）は、極限の低ノイズ性能を追求するあまり、高価格かつ専用設計に依存する傾向があった。
+            ライフサイエンスおよび産業検査の現場における顕微鏡のデジタル化は、研究効率に直結する。しかし、従来のシステムでは「カメラ・PC・モニター」をそれぞれ独立して設置・配線する必要があり、以下の物理的課題が顕在化していた。
         </p>
-        
-        <div class="image-container">
-            <img src="toup.png" alt="ToupTek 製品カテゴリーと市場戦略" class="zoomable-img" id="productImage">
-            <p style="font-size: 0.85rem; color: #64748b; margin-top: 10px;">図1：主な製品カテゴリーと市場戦略の概要</p>
+        <div class="grid">
+            <div class="card">
+                <h3>設置スペースと配線の複雑化</h3>
+                <p>クリーンルームや製造ラインの限られたスペースにおいて、PCの設置と煩雑な配線はメンテナンス性を低下させ、汚染リスクを増大させる。</p>
+            </div>
+            <div class="card">
+                <h3>処理遅延と利便性のトレードオフ</h3>
+                <p>高解像度（4K）撮影におけるデータ転送負荷は、リアルタイム観察の滑らかさを損ない、検査スループットのボトルネックとなる。</p>
+            </div>
         </div>
-
         <p>
-            特に教育現場や一般的な医療検査、外観検査においては、ハイエンドな物理スペックよりも、既存設備への適応性、調達の迅速性、および投資対効果（ROI）が導入における主要なボトルネックとなっている。
+            特に教育現場や外観検査では、ハイエンドな研究用機材よりも、既存設備への適応性と即時性が強く求められている。
         </p>
     </section>
 
     <section>
-        <h2>【解決策】ToupTekの技術原理と市場戦略</h2>
+        <h2>【解決策】AIOCAM4Kが提示する「統合」の技術原理</h2>
         <p>
-            Hangzhou ToupTek Photonics（2010年設立）は、Cマウント接続を基軸とした「外付け型デジタルイメージングソリューション」に特化することで、これらの課題を解決している。
+            AIOCAM4Kシリーズは、撮像素子、13.3インチ高精細ディスプレイ、および処理エンジンを単一筐体に統合した。これにより、PCを介在させない自律的な観察環境を構築する。
         </p>
         
-        <div class="grid">
-            <div class="card">
-                <h3>高度な物理的汎用性</h3>
-                <p>既存の光学顕微鏡に「とりつけてプラス」するCマウント基準を徹底。光学系全体の置換を不要とし、低コストでのデジタルアップグレードを可能にする。</p>
-            </div>
-            <div class="card">
-                <h3>CMOSセンサの最適化設計</h3>
-                <p>sCMOSおよびCMOSセンサを搭載しつつ、回路設計を簡素化。量産効果により、物理性能を維持しながら「短納期・低価格」な供給体制を実現した。</p>
-            </div>
+        <div class="image-container">
+            <img src="toup2.png" alt="AIOCAM4K システム構成" class="zoomable-img" id="productImage1">
+            <p style="font-size: 0.85rem; color: #64748b; margin-top: 10px;">図1：モニター一体型設計による配線の排除と空間効率の最適化</p>
         </div>
 
-        <h3>メーカー・ポジショニングの論理的比較</h3>
+        <h3>1. 物理センサの最適化：Sony Starvis 2の採用</h3>
+        <p>
+            裏面照射型高感度センサー「Starvis 2」を搭載。光の利用効率を最大化する物理構造により、低照度環境下でも4K解像度の高S/N比（信号対雑音比）を維持し、4K/60fpsの低遅延出力を実現している。
+        </p>
+
+        <h3>2. リアルタイム処理アルゴリズム</h3>
+        <p>
+            PCソフトウェアに頼らず、カメラ内部で「精密な寸法計測」や「リアルタイム被写界深度合成（EDF）」を実行。マウス操作一つで、凹凸のある試料の全焦点画像を瞬時に生成する。
+        </p>
+
         <table>
             <thead>
                 <tr>
-                    <th>メーカー</th>
-                    <th>物理的特性（例え）</th>
-                    <th>産業的適応領域</th>
+                    <th>機能カテゴリー</th>
+                    <th>具体的な技術仕様</th>
+                    <th>現場への適用メリット</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Tucsen</td>
-                    <td>科学研究用特装車両</td>
-                    <td>EUV、宇宙、極低ノイズを要する国家プロジェクト</td>
+                    <td>インターフェース</td>
+                    <td>HDMI / USB 3.0 / Wi-Fi</td>
+                    <td>場所を選ばないマルチデバイス共有の実現</td>
                 </tr>
                 <tr>
-                    <td>Luxima</td>
-                    <td>超高速解析機（F1）</td>
-                    <td>チップマウンタ、高速動作解析、ゴルフ解析</td>
+                    <td>データ整合性</td>
+                    <td>本体内SD保存・計測機能</td>
+                    <td>PCレスでのエビデンス取得、OS依存の排除</td>
                 </tr>
                 <tr>
-                    <td><strong>ToupTek</strong></td>
-                    <td><strong>高効率量産車</strong></td>
-                    <td><strong>顕微鏡デジタル化、医療、教育、一般外観検査</strong></td>
+                    <td>操作性</td>
+                    <td>音声制御モジュール</td>
+                    <td>ハンズフリー操作による作業効率と衛生管理の両立</td>
                 </tr>
             </tbody>
         </table>
     </section>
 
     <section>
-        <h2>【産業的インパクト】イメージング技術のコモディティ化</h2>
+        <h2>【産業的インパクト】イメージング技術のコモディティ化と効率化</h2>
         <p>
-            ToupTekの台頭は、単なる安価な代替品の提供に留まらず、産業用カメラ市場全体の構造変化を象徴している。Hikrobot（ハイクロボット）等の巨大プレイヤーによる産業用カメラ市場への攻勢と呼応し、高品質なイメージングデータの取得コストを劇的に低下させている。
+            ToupTekの技術戦略は、Cマウント規格への徹底した適応（汎用性）と、統合型ハードウェアによる導入コストの低減に基づいている。これは単なる安価な代替品の提供ではなく、産業用イメージングデータの取得コストを劇的に低下させる構造変化を意味する。
         </p>
         <p>
-            特に、PC不要でモニターへ直接出力可能なHDMI接続型カメラの拡充は、作業現場の物理的な省スペース化と、検査スループットの向上に直接的に寄与している。
+            PC不要のスタンドアロン運用は、検査工程の自動化や教育現場での共有を加速し、物理現象を「正しく、速く、低コストで」記録・分析するインフラを全ての現場に普及させるインパクトを持つ。
         </p>
     </section>
 </div>
@@ -300,20 +317,22 @@
 
 <script>
     const overlay = document.getElementById('overlay');
-    const image = document.getElementById('productImage');
+    const images = document.querySelectorAll('.zoomable-img');
 
-    image.addEventListener('click', (e) => {
-        image.classList.toggle('zoomed');
-        if (image.classList.contains('zoomed')) {
-            overlay.style.display = 'block';
-        } else {
-            overlay.style.display = 'none';
-        }
-        e.stopPropagation();
+    images.forEach(img => {
+        img.addEventListener('click', (e) => {
+            img.classList.toggle('zoomed');
+            if (img.classList.contains('zoomed')) {
+                overlay.style.display = 'block';
+            } else {
+                overlay.style.display = 'none';
+            }
+            e.stopPropagation();
+        });
     });
 
     overlay.addEventListener('click', () => {
-        image.classList.remove('zoomed');
+        images.forEach(img => img.classList.remove('zoomed'));
         overlay.style.display = 'none';
     });
 </script>
